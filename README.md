@@ -27,4 +27,4 @@ Orchestra.apps([:illuminate, current_app])
 
 ## License
 
-Orchestra is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Orchestra is open-sourced software licensed under the [MIT license](LICENSE.md).
