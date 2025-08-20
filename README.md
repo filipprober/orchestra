@@ -38,11 +38,11 @@ Orchestra.apps([:illuminate, current_app])
 
 [
   %{
-    module: CreateUsersTable,
+    module: MigrateCommand,
     path: ~c"/path/to/file.ex"
   },
   %{
-    module: CreatePostsTable,
+    module: MakeModelCommand,
     path: ~c"/path/to/file.ex"
   },
   # ..
