@@ -55,8 +55,6 @@ Orchestra.apps([:illuminate, current_app])
 ]
 ```
 
-```elixir
-
 ## License
 
 Orchestra is open-sourced software licensed under the [MIT license](LICENSE.md).
