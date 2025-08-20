@@ -23,6 +23,12 @@ current_app = Mix.Project.config()[:app]
 # Retrieve all modules implementing the `Illuminate.Console.Command` behaviour:
 Orchestra.apps([:illuminate, current_app])
 |> Orchestra.get(Illuminate.Console.Command)
+
+[
+  MigrateCommand,
+  MakeModelCommand,
+  # ...
+]
 ```
 
 To retrieve a list of modules including their paths, you can use the `Orchestra.with_paths/0` function:
