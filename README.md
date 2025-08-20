@@ -25,6 +25,32 @@ Orchestra.apps([:illuminate, current_app])
 |> Orchestra.get(Illuminate.Console.Command)
 ```
 
+To retrieve a list of modules including their paths, you can use the `Orchestra.with_paths/0` function:
+
+```elixir
+# Retrieve the current application name:
+current_app = Mix.Project.config()[:app]
+
+# Retrieve all modules implementing the `Illuminate.Console.Command` behaviour including their paths:
+Orchestra.apps([:illuminate, current_app])
+|> Orchestra.get(Illuminate.Console.Command)
+|> Orchestra.with_paths()
+
+[
+  %{
+    module: CreateUsersTable,
+    path: ~c"/path/to/file.ex"
+  },
+  %{
+    module: CreatePostsTable,
+    path: ~c"/path/to/file.ex"
+  },
+  # ..
+]
+```
+
+```elixir
+
 ## License
 
 Orchestra is open-sourced software licensed under the [MIT license](LICENSE.md).

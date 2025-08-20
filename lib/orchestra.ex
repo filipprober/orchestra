@@ -40,5 +40,20 @@ defmodule Orchestra do
 
     mods
   end
+
+  @doc """
+  Retrieve a list of maps with the module and its source path.
+  """
+  def with_paths(modules) when is_list(modules) do
+    modules
+    |> Enum.map(fn module ->
+      source = case module.__info__(:compile) do
+        compile_info when is_list(compile_info) ->
+          Keyword.get(compile_info, :source)
+        _ -> nil
+      end
+      %{module: module, path: source}
+    end)
+  end
 end
 
